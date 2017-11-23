@@ -10,9 +10,21 @@ public class Exam02 {
 		String op = s.nextLine().trim();
 		int result = 0;
 		
-		if(op.equals("+")) {
+		if(op.equals("+")){
 			result = a+b;
+		}else if(op.equals("-")) {
+			result = a -b;
+		}else if(op.equals("*")) {
+			result = a *b;
+		}else if(op.equals("/")) {
+			result = a /b;
+		}else if(op.equals("%")){
+			result = a % b;
+		}else {
+			System.out.println("연산자는 +,-,*,/ 만 입력가능합니다.");
+			System.exit(0);
 		}
 		System.out.println("result = " + result);
+		s.close();
 	}
 }
