@@ -7,25 +7,18 @@ public class Test {
 	Test(String str){
 		this.str = str;
 	}
-	void print() {
-		System.out.println(str);
-	}
-	String getCoffee(int pay) {
-		if(pay>1000) {
-			return "커피 사왔습니다.";
-		}
-		return "돈 부족해 임마!!";
+	
+	void print(ObjectExam oe) {
+		System.out.print("ObjectExam이 가지고 있는 변수 2개의 값은 = ");
+		System.out.print(oe.num1 + ",");
+		System.out.println(oe.num2);
 	}
 	
 	public static void main(String[] args) {		
 		ObjectExam oe = new ObjectExam();
+		oe.inputNums();
 		
-		Test t = new Test("가나다ABC123");
-		
-		//t.print();
-		String result = t.getCoffee(1001);
-		System.out.println(result);
-		int a = 3;
-		a = 4;
+		GuGuDan ggd = new GuGuDan();
+		ggd.printLoop(oe);
 	}
 }

@@ -5,6 +5,9 @@ import java.util.Scanner;
 public class ObjectExam {
 	int num1;
 	int num2;
+	ObjectExam(){
+		System.out.println("ObjectExam 실행");
+	}
 	int add() {
 		return num1 + num2;
 	}
