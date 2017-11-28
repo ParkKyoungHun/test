@@ -3,10 +3,13 @@ package p03;
 import java.util.Scanner;
 
 public class ObjectExam {
-	int num1;
-	int num2;
-	ObjectExam(){
+	public int num1;
+	public int num2;
+	public ObjectExam(){
 		System.out.println("ObjectExam 실행");
+	}
+	void getInt() {
+		
 	}
 	int add() {
 		return num1 + num2;
@@ -14,7 +17,7 @@ public class ObjectExam {
 	int getNum2(int num2) {
 		return num2;
 	}
-	void inputNums() {
+	public void inputNums() {
 		Scanner s = new Scanner(System.in);
 		System.out.println("첫번째 숫자를 입력해주세요 : " );
 		num1 = s.nextInt();
