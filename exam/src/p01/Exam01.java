@@ -6,6 +6,7 @@ public class Exam01 {
 		//인트형 변수명 a 의 값은 3
 		//인트형 변수명 b 의 값은 4
 		// a와 b를 곱한값을 출력해주세요.
+		int c = 45;
 		int a = 3;
 		int b = 4;
 		System.out.println(a*b);
