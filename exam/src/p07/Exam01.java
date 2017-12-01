@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public class Exam01 {
 	int[] nums;
+	int cnt;
 	
 	void inputNums() {
 		Scanner s = new Scanner(System.in);
@@ -18,6 +19,7 @@ public class Exam01 {
 			for(int j=nums[2];j>nums[3];j--) {
 				String str = i + " X " + j + " = " + (i*j);
 				if(i*j % nums[4] == 0) {
+					cnt ++;
 					str = nums[4] + "의배수";
 				}
 				System.out.print(str);
@@ -32,5 +34,6 @@ public class Exam01 {
 		Exam01 e = new Exam01();
 		e.inputNums();
 		e.print();
+		System.out.println(e.nums[4] + "의 배수의 갯수는 = " + e.cnt + "입니다.");
 	}
 }
