@@ -1,16 +1,16 @@
 package p10;
 
-public class Excute extends Father{
-//	int a = 4;
-	public void print() {
-		System.out.println("아들 프린트");
+public class Excute {
+	
+	public void print(Father f) {
+		System.out.println(f.toString());
 	}
-	public void print(int a) {
-		System.out.println("아들 프린트 : "+a);
-	}
+	
 	public static void main(String[] args) {
+		Father f = new Father(1,2);
 		Excute e = new Excute();
-		e.print();
-		System.out.println(e.a);
+		e.print(f);
+		Object p = new P2();
+		System.out.println(p.toString());
 	}
 }
