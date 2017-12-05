@@ -1,4 +1,4 @@
-package p11;
+﻿package p11;
 
 import java.util.Random;
 import java.util.Scanner;
@@ -7,7 +7,7 @@ public class Lotto {
 
 	int lottoCnt = 0;
 	int joinCnt = 0;
-	
+	//test
 	Lotto(){
 		Scanner s = new Scanner(System.in);
 		System.out.println("참여인원을 입력해주세요=>");
