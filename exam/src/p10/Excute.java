@@ -11,6 +11,6 @@ public class Excute {
 		Excute e = new Excute();
 		e.print(f);
 		Object p = new P2();
-		System.out.println(p.toString());
+		System.out.println(p);
 	}
 }
