@@ -2,12 +2,8 @@ package p15;
 
 import java.util.ArrayList;
 
-public class Exam {
-	String s = "123";
-	
-	public void test() {
-		
-	}
+public class Exam2 {
 	public static void main(String[] args) {
+		System.out.println(Exam.str);
 	}
 }
