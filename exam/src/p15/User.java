@@ -3,9 +3,20 @@ package p15;
 public class User {
 	private String name;
 	private int age;
-	public User(String name, int age) {
+	private int no;
+	public User(int no) {
+		this.no= no;
+	}
+	public User(String name, int age, int no) {
 		this.name = name;
 		this.age = age;
+		this.no= no;
+	}
+	public int getNo() {
+		return no;
+	}
+	public void setNo(int no) {
+		this.no = no;
 	}
 	public String getName() {
 		return name;

@@ -18,4 +18,7 @@ public class Service{
 	public ArrayList<User> getUserList(String str){
 		return dao.getUserList(str);
 	}
+	public boolean updateUser(User user) {
+		return dao.updateUser(user);
+	}
 }
