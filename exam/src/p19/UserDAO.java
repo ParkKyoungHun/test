@@ -10,17 +10,29 @@ import java.util.HashMap;
 import p18.Connector;
 
 public class UserDAO {
-	Connector c;
-	Connection con;
+
+	private Connector c;
+	private Connection con;
 	UserDAO() throws ClassNotFoundException{
 		c = new Connector();
 	}
-	
+	public void openCon() throws SQLException {
+		con = c.getConnection();
+	}
+	public void closeCon() throws SQLException {
+		c.close();
+	}
+	public void commit() throws SQLException {
+		con.commit();
+	}
+	public void rollback() throws SQLException {
+		con.rollback();
+	}
+
 	public ArrayList<HashMap<String,Object>> getUserList() throws SQLException{
 		ArrayList<HashMap<String,Object>> userList = 
 				new ArrayList<HashMap<String,Object>>();
 		String sql = "select * from user_info";
-		con = c.getConnection();
 		PreparedStatement ps = con.prepareStatement(sql);
 		ResultSet rs = ps.executeQuery();
 		while(rs.next()) {
@@ -29,7 +41,6 @@ public class UserDAO {
 			hm.put("uino",rs.getInt("uino"));
 			userList.add(hm);
 		}
-		c.close();
 		return userList;
 	}
 	
@@ -37,15 +48,13 @@ public class UserDAO {
 		String sql = "insert into user_info(uiname, uiage, uiid,"
 				+"uipwd, address, cino,uiregdate)\r\n" + 
 				  "values(?,?,?,?,?,1,now())";
-		con = c.getConnection();
 		PreparedStatement ps = con.prepareStatement(sql);
 		ps.setString(1, (String)hm.get("uiname"));
-		ps.setInt(2, (int)hm.get("uiage"));
+		ps.setInt(2, (Integer)hm.get("uiage"));
 		ps.setString(3, (String)hm.get("uiid"));
 		ps.setString(4, (String)hm.get("uipwd"));
 		ps.setString(5, (String)hm.get("address"));
 		int result = ps.executeUpdate();
-		con.close();
 		return result;
 	}
 	
@@ -54,11 +63,10 @@ public class UserDAO {
 	}
 	public int deleteUser(int userNo) throws SQLException {
 		String sql = "delete from user_info where uino=?";
-		con = c.getConnection();
 		PreparedStatement ps = con.prepareStatement(sql);
 		ps.setInt(1, userNo);
 		int result = ps.executeUpdate();
-		con.close();
 		return result;
 	}
+	
 }

@@ -23,7 +23,7 @@ public class Connector {
 	public Connection getConnection() throws SQLException{
 		if(con==null) {
 			con = DriverManager.getConnection(url, user, password);
-			//con.setAutoCommit(false);
+			con.setAutoCommit(false);
 		}
 		return con;
 	}
