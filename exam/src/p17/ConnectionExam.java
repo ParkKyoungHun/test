@@ -9,7 +9,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class ConnectionExam {
-
+ 
 	public static void main(String[] args) {
 		String url = "jdbc:mariadb://localhost:3306/iot2";
 		String user = "root";
@@ -39,11 +39,11 @@ public class ConnectionExam {
 			ArrayList<UserInfo> al = new ArrayList<UserInfo>();
 			while(rs.next()) {
 				UserInfo ui = new UserInfo();
-				ui.setUserage(rs.getInt("userage"));
-				ui.setUserno(rs.getInt("userno"));
-				ui.setUsername(rs.getString("username"));
-				ui.setUserid(rs.getString("userid"));
-				ui.setUserpwd(rs.getString("userpwd"));
+//				ui.setUserage(rs.getInt("userage"));
+//				ui.setUserno(rs.getInt("userno"));
+//				ui.setUsername(rs.getString("username"));
+//				ui.setUserid(rs.getString("userid"));
+//				ui.setUserpwd(rs.getString("userpwd"));
 				al.add(ui);
 			}
 			for(UserInfo ui : al) {
